@@ -211,10 +211,14 @@ section { padding: 6rem 1.5rem; position: relative; }
   transform: translateY(-50%);
 }
 
+.hero .container {
+  max-width: 1260px;
+}
+
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 380px;
-  gap: 4rem;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 3rem;
   align-items: center;
   position: relative;
   z-index: 2;
@@ -300,6 +304,7 @@ section { padding: 6rem 1.5rem; position: relative; }
   color: var(--gold-soft);
   letter-spacing: 0.1em;
   margin-top: 0.75rem;
+  padding: 0 1.2rem;
   font-style: italic;
 }
 
@@ -487,21 +492,36 @@ section { padding: 6rem 1.5rem; position: relative; }
 
 @media (max-width: 900px) {
   .hero { padding: 6rem 1.2rem 4rem; min-height: auto; }
-  .hero-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .hero-grid { grid-template-columns: 1fr; gap: 2.25rem; }
   .offer-card { max-width: 420px; margin: 0 auto; }
-  .hero-mala { max-width: 340px; margin: 0 auto; }
+  .hero-mala {
+    order: -1;
+    width: calc(100% + 2.4rem);
+    max-width: none;
+    margin: 0 -1.2rem 0.25rem;
+  }
+  .mala-image {
+    border-radius: 0;
+    box-shadow: none;
+    animation: none;
+  }
+  .mala-image::before,
+  .mala-image::after {
+    display: none;
+  }
 }
 
 /* === HERO IMAGEM TRIŚŪLA === */
 .hero-mala {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
 }
 .mala-image {
   width: 100%;
-  max-width: 440px;
+  max-width: 100%;
   position: relative;
   border-radius: 8px;
   overflow: hidden;
@@ -1812,8 +1832,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <aside class="hero-mala">
         <div class="mala-image">
-          <iframe src="https://www.youtube.com/embed/-wiJDvyVM3A" title="Yuri Wolf — Sânscrito Aplicado ao Mantrayoga" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+          <iframe src="https://www.youtube.com/embed/-wiJDvyVM3A" title="Yuri Wolf — Sânscrito Aplicado ao Mantrayoga" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
+        <p class="vsl-caption">Assista: Yuri Wolf apresenta o Método S.A.F.E.R.A</p>
       </aside>
 
     </div>
